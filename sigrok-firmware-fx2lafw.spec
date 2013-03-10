@@ -9,6 +9,7 @@ Source0:	http://downloads.sourceforge.net/sigrok/%{name}-%{version}.tar.gz
 # Source0-md5:	4e1080dbaaf44f1faba503a742b8bc56
 BuildRequires:	sdcc
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 fx2lafw is a free/libre/open-source firmware for logic analyzers based
@@ -26,10 +27,9 @@ and uses additional helper code (fx2lib), licensed under the GNU LGPL
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 # libsigrok will look here
 %{__make} -j1 install \
-	DESTDIR=$RPM_BUILD_ROOT/%{_datadir}/sigrok-firmware
+	DESTDIR=$RPM_BUILD_ROOT%{_datadir}/sigrok-firmware
 
 %clean
 rm -rf $RPM_BUILD_ROOT
