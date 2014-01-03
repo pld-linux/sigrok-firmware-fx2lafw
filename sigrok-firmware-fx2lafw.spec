@@ -40,4 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README NEWS ChangeLog
-%{_datadir}/sigrok-firmware
+%{_datadir}/sigrok-firmware/fx2lafw-braintechnology-usb-lps.fw
+%{_datadir}/sigrok-firmware/fx2lafw-cwav-usbeeax.fw
+%{_datadir}/sigrok-firmware/fx2lafw-cwav-usbeedx.fw
+%{_datadir}/sigrok-firmware/fx2lafw-cwav-usbeesx.fw
+%{_datadir}/sigrok-firmware/fx2lafw-cypress-fx2.fw
+%{_datadir}/sigrok-firmware/fx2lafw-saleae-logic.fw
