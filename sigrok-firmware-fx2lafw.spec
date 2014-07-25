@@ -1,14 +1,16 @@
 Summary:	Firmware for logic analyzers based on the Cypress EZ-USB FX2(LP) chip
 Summary(pl.UTF-8):	Firmware dla analizatorów logicznych opartych na układzie Cypress EZ-USB FX2(LP)
 Name:		sigrok-firmware-fx2lafw
-Version:	0.1.1
+Version:	0.1.2
 Release:	1
 License:	GPL v2+ (firmware code), LGPL v2+ (fx2lib library)
 Group:		Applications/Engineering
-Source0:	http://downloads.sourceforge.net/sigrok/%{name}-%{version}.tar.gz
-# Source0-md5:	6d91d1decac041dc29405379af530261
+Source0:	http://sigrok.org/download/source/sigrok-firmware-fx2lafw/%{name}-%{version}.tar.gz
+# Source0-md5:	5d0d944b23ef749a8e9f2458f4d4b680
 URL:		http://sigrok.org/wiki/Fx2lafw
-BuildRequires:	sdcc
+# sdas8051 or asx8051
+BuildRequires:	sdcc >= 2.9.0
+Requires:	libsigrok >= 0.1.1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README NEWS ChangeLog
+%doc ChangeLog NEWS README
 %{_datadir}/sigrok-firmware/fx2lafw-braintechnology-usb-lps.fw
 %{_datadir}/sigrok-firmware/fx2lafw-cwav-usbeeax.fw
 %{_datadir}/sigrok-firmware/fx2lafw-cwav-usbeedx.fw
